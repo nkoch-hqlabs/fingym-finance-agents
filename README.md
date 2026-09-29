@@ -101,5 +101,3 @@ Standard zero-shot evaluation on an unstandardized commercial loan dataset:
 | **FinGym ReAct Agent (Structured Tools)** | **100.0%** | **94.0%** | **100.0%** | **98.0 / 100** |
 
 ---
-
-## 2. Architecture Overview
