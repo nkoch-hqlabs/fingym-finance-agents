@@ -23,7 +23,6 @@ Frontier Large Language Models (LLMs) demonstrate strong qualitative reasoning o
 ---
 
 ## 2. Architecture Overview
-
                   ┌────────────────────────────────────────┐
                   │            Task Directive              │
                   │  "Underwrite $15M Facility for Acme;   │
@@ -31,31 +30,30 @@ Frontier Large Language Models (LLMs) demonstrate strong qualitative reasoning o
                   └───────────────────┬────────────────────┘
                                       │
                                       ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│                       Agent Execution Sandbox                          │
-│                                                                        │
-│   Observation Space (State):                                           │
-│   ├── /data_room/financials.json    (Audited 3-Statement Statements)   │
-│   ├── /data_room/footnotes.json     (Restructuring & Legal Notes)      │
-│   └── /data_room/bureau_report.json (UCC-1 Filings & Drawn Debt Lines) │
-│                                                                        │
-│   Action Space (Tools):                                                │
-│   ├── extract_statement(statement_name)                                │
-│   ├── query_footnote(keyword)                                          │
-│   ├── query_bureau(field)                                              │
-│   └── submit_credit_decision(memo_payload)                             │
-└───────────────────────────────────┬────────────────────────────────────┘
-                                    │
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│                     Deterministic Evaluation Harness                   │
-│                                                                        │
-│   ├── Level 1: Mathematical Invariants (Assets == Liab + Equity)       │
-│   ├── Level 2: Factual Extraction (Footnote 4 Add-Back Match)          │
-│   ├── Level 3: Cross-Schema Reconciliation (Bureau Debt Capture)       │
-│   └── Trajectory Scoring: Step efficiency & error penalties            │
-└────────────────────────────────────────────────────────────────────────┘
-
+        ┌────────────────────────────────────────────────────────────────────────┐
+        │                       Agent Execution Sandbox                          │
+        │                                                                        │
+        │   Observation Space (State):                                           │
+        │   ├── /data_room/financials.json    (Audited 3-Statement Statements)   │
+        │   ├── /data_room/footnotes.json     (Restructuring & Legal Notes)      │
+        │   └── /data_room/bureau_report.json (UCC-1 Filings & Drawn Debt Lines) │
+        │                                                                        │
+        │   Action Space (Tools):                                                │
+        │   ├── extract_statement(statement_name)                                │
+        │   ├── query_footnote(keyword)                                          │
+        │   ├── query_bureau(field)                                              │
+        │   └── submit_credit_decision(memo_payload)                             │
+        └───────────────────────────────────┬────────────────────────────────────┘
+                                            │
+                                            ▼
+        ┌────────────────────────────────────────────────────────────────────────┐
+        │                     Deterministic Evaluation Harness                   │
+        │                                                                        │
+        │   ├── Level 1: Mathematical Invariants (Assets == Liab + Equity)       │
+        │   ├── Level 2: Factual Extraction (Footnote 4 Add-Back Match)          │
+        │   ├── Level 3: Cross-Schema Reconciliation (Bureau Debt Capture)       │
+        │   └── Trajectory Scoring: Step efficiency & error penalties            │
+        └────────────────────────────────────────────────────────────────────────┘
 ---
 
 ## 3. Environment Specifications
